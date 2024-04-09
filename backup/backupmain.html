@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zhou</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- English Fonts-->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Chinese Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Liu+Jian+Mao+Cao:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Zhi+Mang+Xing:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- <style>
+        body { font-family: 'Noto Serif', serif; margin: 0; padding: 0; }
+        .header, .footer { background-color: #f1f1f1; padding: 20px; text-align: center; }
+        .main { padding: 20px; }
+        .navigation { background-color: #f1f1f1; box-shadow: 0 4px 8px rgba(0,0,0,0.2); }
+        .navigation ul { list-style-type: none; margin: 0; padding: 0; }
+        .navigation ul li { display: inline; }
+        .navigation ul li a {
+            display: inline-block;
+            color: black;
+            text-align: center;
+            padding: 14px 20px;
+            text-decoration: none;
+            transition: color 0.3s ease, border-bottom 0.3s ease, border-top 0.3s ease;
+        }
+        .navigation ul li a:hover {
+            color: #777;
+            border-top: 2px solid black;
+            border-bottom: 2px solid black;
+        }
+
+        
+    </style> -->
+
+    <style>
+        /*
+        body { font-family: 'Noto Serif', serif; margin: 0; padding: 0; }
+        .header, .footer { background-color: #f1f1f1; padding: 20px; text-align: center; }
+        .main { padding: 20px; } */
+
+
+        body { font-family: 'Noto Serif', serif; margin: 0; padding: 0; }
+        .footer { background-color: #f1f1f1; padding: 20px; text-align: center; transition: padding 0.3s ease-in-out; }
+        .main { padding: 20px; }
+        .navigation { position: sticky; top: 0; background-color: #f1f1f1; box-shadow: 0 2px 5px rgba(0,0,0,0.1); z-index: 1000; }
+        .header {
+            position: sticky;
+            top: 0;
+            background-color: #f1f1f1;
+            padding: 10px;
+            text-align: center;
+            transition: padding 0.2s ease-in-out, font-size 0.2s ease-in-out;
+            z-index: 100;
+            cursor: pointer; /* Indicates the header is clickable */
+        }
+        .small-header { padding: 5px; }
+        .small-header h1 { font-size: 15px; }
+        .small-header p { font-size: 14px; }
+
+
+
+        .navigation { 
+            position: sticky;
+            top: 60px;
+            background-color: #f1f1f1; 
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            z-index: 101; 
+        }
+        .navigation ul { list-style-type: none; margin: 0; padding: 0; }
+        .navigation ul li { display: inline; }
+        .navigation ul li a {
+            position: relative;
+            display: inline-block;
+            color: black;
+            text-align: center;
+            padding: 14px 20px; 
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+        .navigation ul li a::before, .navigation ul li a::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: rgb(165, 165, 165);
+            transform: scaleX(0);
+            transition: transform 0.2s ease;
+        }
+        .navigation ul li a::before { top: 0; }
+        .navigation ul li a::after { bottom: 0; }
+        .navigation ul li a:hover {
+            color: #777;
+        }
+        .navigation ul li a:hover::before, .navigation ul li a:hover::after {
+            transform: scaleX(1);
+        }
+        .chinese { font-family: 'Noto Sans SC', sans-serif; }
+        .chinese1 { font-family: 'Zhi Mang Xing', cursive; }
+        .chinese2 { font-family: 'Liu Jian Mao Cao', cursive; }
+        .chinese3 { font-family: 'Ma Shan Zheng', cursive; }
+    </style>
+    <!-- <style>
+        body { font-family: 'Noto Serif', serif; margin: 0; padding: 0; }
+        .header, .footer { background-color: #f1f1f1; padding: 20px; text-align: center; }
+        .main { padding: 20px; }
+        .navigation { background-color: #333; }
+        .navigation ul { list-style-type: none; margin: 0; padding: 0; }
+        .navigation ul li { display: inline; }
+        .navigation ul li a { display: inline-block; color: white; text-align: center; padding: 14px 20px; text-decoration: none; }
+        .navigation ul li a:hover { background-color: #ddd; color: black; }
+        
+        
+
+        
+    </style> -->
+</head>
+
+
+<!-- <script>
+    document.addEventListener('DOMContentLoaded', (event) => {
+        const header = document.querySelector('.header');
+        const navHeight = document.querySelector('.navigation').offsetHeight;
+    
+        window.onscroll = function() {
+            if (window.pageYOffset > navHeight) {
+                header.classList.add("small-header");
+            } else {
+                header.classList.remove("small-header");
+            }
+        };
+    });
+</script> -->
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const header = document.querySelector('.header');
+    
+        window.onscroll = function() {
+            // Toggle "small-header" class based on scroll position.
+            if (window.pageYOffset > 100) {
+                header.classList.add("small-header");
+            } else {
+                header.classList.remove("small-header");
+            }
+        };
+    
+        header.onclick = function() {
+            // Scroll to the top smoothly when the header is clicked.
+            window.scrollTo({top: 0, behavior: 'smooth'});
+        };
+    });
+</script>
+
+
+
+<body>
+
+<div class="header">
+    <h1><span>Alex Zhou</span> <span class="chinese">不必</span></h1>
+    <p>Engineering Portfolio</p>
+</div>
+
+<div class="navigation">
+    <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+</div>
+
+<div class="main" id="home">
+    <h2>Hello, Welcome!</h2>
+    <p>yo im alex and this my portfolio and imma be talking about my personal projects and what they are so pls hire me lmao</p>
+</div>
+
+<div class="main" id="about">
+    <h2>About Me</h2>
+    <p>Man i love engineering i love automating things in my life i want to see the world flourish and become more efficient 
+    </p>
+</div>
+
+<div class="main" id="projects">
+    <h2>Projects</h2>
+    <p>robot</p>
+</div>
+
+<div class="main" id="skills">
+    <h2>Skills</h2>
+    <p>gedagedegadagada o.</p>
+</div>
+
+<div class="main" id="contact">
+    <h2>Contact</h2>
+    <p>Email: qinnan_zhou@outlook.com</p>
+    <p>LinkedIn: </p>
+</div>
+
+<div class="footer">
+    <p>Qinnan Zhou &copy; 2024</p>
+</div>
+
+</body>
+
+
+
+
+</html>

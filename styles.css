@@ -1,0 +1,59 @@
+body { font-family: 'Noto Serif', serif; margin: 0; padding: 0; }
+.footer { background-color: #f1f1f1; padding: 1px; text-align: center; transition: padding 0.3s ease-in-out; }
+.main { padding: 20px; }
+.navigation { position: sticky; top: 0; background-color: #f1f1f1; box-shadow: 0 2px 5px rgba(0,0,0,0.1); z-index: 1000; }
+.header {
+    position: sticky;
+    top: 0;
+    background-color: #f1f1f1;
+    padding: 10px;
+    text-align: center;
+    transition: padding 0.2s ease-in-out, font-size 0.2s ease-in-out;
+    z-index: 100;
+    cursor: pointer;
+}
+.small-header { padding: 5px; }
+.small-header h1 { font-size: 15px; }
+.small-header p { font-size: 14px; }
+
+
+.navigation { 
+    position: sticky;
+    top: 60px;
+    background-color: #f1f1f1; 
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    z-index: 101; 
+}
+.navigation ul { list-style-type: none; margin: 0; padding: 0; }
+.navigation ul li { display: inline; }
+.navigation ul li a {
+    position: relative;
+    display: inline-block;
+    color: black;
+    text-align: center;
+    padding: 14px 20px; 
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+.navigation ul li a::before, .navigation ul li a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: rgb(165, 165, 165);
+    transform: scaleX(0);
+    transition: transform 0.2s ease;
+}
+.navigation ul li a::before { top: 0; }
+.navigation ul li a::after { bottom: 0; }
+.navigation ul li a:hover {
+    color: #777;
+}
+.navigation ul li a:hover::before, .navigation ul li a:hover::after {
+    transform: scaleX(1);
+}
+.chinese { font-family: 'Noto Sans SC', sans-serif; }
+.chinese1 { font-family: 'Zhi Mang Xing', cursive; }
+.chinese2 { font-family: 'Liu Jian Mao Cao', cursive; }
+.chinese3 { font-family: 'Ma Shan Zheng', cursive; }
