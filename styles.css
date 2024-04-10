@@ -1,30 +1,32 @@
 body { font-family: 'Noto Serif', serif; margin: 0; padding: 0; }
 .footer { background-color: #f1f1f1; padding: 1px; text-align: center; transition: padding 0.3s ease-in-out; }
 .main { padding: 20px; }
-.navigation { position: sticky; top: 0; background-color: #f1f1f1; box-shadow: 0 2px 5px rgba(0,0,0,0.1); z-index: 1000; }
-.header {
-    position: sticky;
-    top: 0;
-    background-color: #f1f1f1;
-    padding: 10px;
-    text-align: center;
-    transition: padding 0.2s ease-in-out, font-size 0.2s ease-in-out;
-    z-index: 100;
-    cursor: pointer;
-}
-.small-header { padding: 5px; }
-.small-header h1 { font-size: 15px; }
-.small-header p { font-size: 14px; }
 
+
+
+.shrink {
+    padding: 5px;
+    font-size: 10px;
+}
 
 .navigation { 
-    position: sticky;
-    top: 60px;
+    /* position: sticky; */
+    display: flex;
+    align-items: center;
+    text-align: center;
     background-color: #f1f1f1; 
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    box-shadow: 0 0px 20px rgba(0,0,0,0.2);
     z-index: 101; 
 }
-.navigation ul { list-style-type: none; margin: 0; padding: 0; }
+
+
+.navigation ul { 
+    list-style-type: none; 
+    margin: 0; padding: 0; display:flex; width: 100%;
+    justify-content: center;
+    gap: 20px;
+
+}
 .navigation ul li { display: inline; }
 .navigation ul li a {
     position: relative;
@@ -35,6 +37,8 @@ body { font-family: 'Noto Serif', serif; margin: 0; padding: 0; }
     text-decoration: none;
     transition: color 0.2s ease;
 }
+
+
 .navigation ul li a::before, .navigation ul li a::after {
     content: '';
     position: absolute;
@@ -50,9 +54,11 @@ body { font-family: 'Noto Serif', serif; margin: 0; padding: 0; }
 .navigation ul li a:hover {
     color: #777;
 }
+
 .navigation ul li a:hover::before, .navigation ul li a:hover::after {
     transform: scaleX(1);
 }
+
 .chinese { font-family: 'Noto Sans SC', sans-serif; }
 .chinese1 { font-family: 'Zhi Mang Xing', cursive; }
 .chinese2 { font-family: 'Liu Jian Mao Cao', cursive; }
