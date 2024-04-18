@@ -1,12 +1,20 @@
 @font-face {
-    font-family: "JetBrainsMono";
+    font-family: "JetBrainsMono-Regular";
     src: url(./fonts/ttf/JetBrainsMono-Regular.ttf);
 }
+@font-face {
+    font-family: "JetBrainsMono-Medium";
+    src: url(./fonts/ttf/JetBrainsMono-Medium.ttf);
+}
+@font-face {
+    font-family: "JetBrainsMono-Bold";
+    src: url(./fonts/ttf/JetBrainsMono-Bold.ttf);
+}
 
-body { font-family: 'JetBrainsMono', sans-serif; margin: 0; padding: 0; }
-.footer { background-color: #f1f1f1; padding: 1px; text-align: center; transition: padding 0.3s ease-in-out; }
-.main { padding: 20px; }
-
+body { font-family: 'JetBrainsMono-Regular', sans-serif; margin: 0; padding: 0; }
+.footer { background-color: #ffffff; padding: 1px; text-align: center; transition: padding 0.3s ease-in-out; }
+/*top, left, right, bottom*/
+.main { padding: 20px 80px 80px 50px;}
 
 
 .shrink {
@@ -14,35 +22,66 @@ body { font-family: 'JetBrainsMono', sans-serif; margin: 0; padding: 0; }
     font-size: 10px;
 }
 
+h2{
+    font-size: 30px;
+}
+p{
+    font-size:20px;
+}
+
+.medium-photo {
+    width: 400px;
+    height: auto;
+
+}
+
 .navigation { 
     position: relative;
     display: flex;  
     justify-content: center;
+    align-items: center;
     background-color: #fff; 
     /* box-shadow: 0 0px 20px rgba(0,0,0,0.2); */
     padding: 10px;
     z-index: 101; 
+    transition: padding 0.3s ease-in-out;
+    width: 100%;
+    box-sizing: border-box;
+    border-bottom: 2px solid #000;
 }
 
-.hline { 
-    width:100%; 
-    height:1.5px; 
-    background: #000;
-
-}
-
-.navigation #header {
+#name {
+    /* transition: font-size 0.1s ease; */
     position: absolute;
     left: 20px; 
     top: 5px;
     bottom: 10px;
     display: flex;
-    color: rgb(113, 102, 102);
+    color: rgb(0, 0, 0);
     align-items: center;
+    font-size: 30px;
 }
-#header span{
+#name span{
     margin-left: 10px;
 }   
+
+#about{
+    scroll-margin-top: 160px;
+}
+#home{
+    scroll-margin-top: 150px;
+}
+.row {
+    display: -webkit-flex;
+    display: flex;
+  }
+.column1 {
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    padding: 0px;
+    
+}
 
 .navigation ul { 
     list-style-type: none; 
@@ -50,15 +89,21 @@ body { font-family: 'JetBrainsMono', sans-serif; margin: 0; padding: 0; }
     display:flex; 
     gap: 20px;
 }
-.navigation ul li { display: inline-block; }
+.navigation li { 
+    display: inline-block; 
+    /* width: 120px; */
+    text-align: center;
+}
 .navigation ul li a {
     position: relative;
-    display: inline-block;
+    display: block;
     color: black;
-    text-align: center;
-    padding: 14px 20px; 
+    padding: 16px 20px;
+
     text-decoration: none;
     transition: color 0.2s ease;
+    font-size: 16px;
+    transition: letter-spacing 0.1s ease-in-out;
 }
 
 
@@ -68,14 +113,16 @@ body { font-family: 'JetBrainsMono', sans-serif; margin: 0; padding: 0; }
     left: 0;
     right: 0;
     height: 2px;
-    background: rgb(165, 165, 165);
+    background: #999;
     transform: scaleX(0);
     transition: transform 0.2s ease;
 }
 .navigation ul li a::before { top: 0; }
 .navigation ul li a::after { bottom: 0; }
 .navigation ul li a:hover {
-    color: #777;
+    /* color: #999; */
+    animation: txtflicker 0.3s forwards;
+
 }
 
 .navigation ul li a:hover::before, .navigation ul li a:hover::after {
@@ -86,3 +133,53 @@ body { font-family: 'JetBrainsMono', sans-serif; margin: 0; padding: 0; }
 .chinese1 { font-family: 'Zhi Mang Xing', cursive; }
 .chinese2 { font-family: 'Liu Jian Mao Cao', cursive; }
 .chinese3 { font-family: 'Ma Shan Zheng', cursive; }
+
+@keyframes txtflicker {
+    0%  {   
+        color: #CCC; 
+    } 
+    20% {   
+        color: #DDD;  
+    }
+    100% {   
+        color: #999;    
+    }
+}
+
+@media (max-width: 768px) {
+    .navigation {
+        display: none;
+    }
+
+
+    /* Hamburger menu */
+    .hamburger-menu {
+        display: block;
+        position: fixed;
+        width: 100%;
+        background-color: #000000;
+        padding: 14px;
+        text-align: right;
+        box-sizing: border-box;
+    }
+
+    .hamburger-menu span {
+        display: inline-block;
+        width: 30px;
+        height: 3px;
+        background-color: #fff;
+        margin: 5px;
+        transition: all 0.3s ease;
+    }
+
+    .menu-toggled .bar1 {
+        -webkit-transform: translateY(8px) rotate(-45deg);
+        transform: translateY(8px) rotate(-45deg);
+    }
+
+    .menu-toggled .bar2 {opacity: 0;}
+    .menu-toggled .bar3 {
+        -webkit-transform: translateY(-8px) rotate(45deg);
+        transform: translateY(-8px) rotate(45deg);
+    }
+}

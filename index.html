@@ -17,7 +17,7 @@
 <body>
 
 <div class="navigation">
-    <h1 id="header"><span>Alex Zhou</span> <span class="chinese2">周勤楠</span></h1>
+    <h1 id="name"><span>Alex Zhou</span> <span class="chinese2">周勤楠</span></h1>
     
     <ul>
         <li><a href="#home">Home</a></li>
@@ -29,41 +29,71 @@
         
 </div>
 
-<div class="hline"></div>
+<div class="hamburger-menu" onclick="toggleMenu()">
+    <span class="bar1"></span>
+    <span class="bar2"></span>
+    <span class="bar3"></span>
+</div>
 
-    
-    <div class="main" id="home">
+<div class="main">
+    <div id="home">
         <h2>Hello, Welcome!</h2>
-        <p>yo im alex and this my portfolio and imma be talking about my personal projects and what they are so pls hire me lmao</p>
+            <div class = "row">
+                <div class = "column1">
+                    <p>I'm Alex, an Electrical Engineering student 
+                        with a keen interest in robotics and automation. 
+                        I'm currently studying at The University of British Columbia, 
+                        where I'm fortunate to explore the intersection of technology 
+                        and innovation through my coursework and projects.</p>
+                    <p>My journey into engineering started with a simple curiosity about 
+                        how things work and a desire to make them work better. 
+                        This curiosity has grown into a commitment to understand 
+                        and improve the systems that power our world, 
+                        especially through the automation of everyday tasks 
+                        and the development of intelligent robotics.</p>
+                    <p>This website is a space where I share my projects, insights, and learnings. 
+                        It’s a collection of my steps in the ongoing journey of learning and discovery. 
+                        Whether you're a student, a professional in the field, 
+                        or just curious about robotics, 
+                        I hope you find something here that inspires and engages.</p>
+                    <p>Thank you for visiting and sharing in this part of my journey.</p>
+                </div>
+                <div class = "column1">
+                    <img src="./images/myhead1.jpg" class = "medium-photo">
+                </div>
+            </div>
+            
+        
     </div>
     
-    <div class="main" id="about">
+    <div id="about">
         <h2>About Me</h2>
         <p>Man i love engineering i love automating things in my life i want to see the world flourish and become more efficient 
         </p>
         <img src="./images/lebron.jpg">
     </div>
     
-    <div class="main" id="projects">
+    <div id="projects">
         <h2>Projects</h2>
         <p>robot</p>
     </div>
     
-    <div class="main" id="skills">
+    <div id="skills">
         <h2>Skills</h2>
         <p>gedagedegadagada o.</p>
         <img src="./images/nugget.jpg">
     </div>
     
-    <div class="main" id="contact">
+    <div id="contact">
         <h2>Contact</h2>
         <p>Email: qinnan_zhou@outlook.com</p>
         <p>LinkedIn: </p>
     </div>
-    
-    <div class="footer">
-        <p>Qinnan Zhou &copy; 2024</p>
-    </div>
+</div> 
+
+<div class="footer">
+    <p>Qinnan Zhou &copy; 2024</p>
+</div>
 
 
 <script src="script.js"></script>
