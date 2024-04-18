@@ -1,4 +1,9 @@
-body { font-family: 'Noto Serif', serif; margin: 0; padding: 0; }
+@font-face {
+    font-family: "JetBrainsMono";
+    src: url(./fonts/ttf/JetBrainsMono-Regular.ttf);
+}
+
+body { font-family: 'JetBrainsMono', sans-serif; margin: 0; padding: 0; }
 .footer { background-color: #f1f1f1; padding: 1px; text-align: center; transition: padding 0.3s ease-in-out; }
 .main { padding: 20px; }
 
