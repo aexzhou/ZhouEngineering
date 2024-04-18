@@ -15,24 +15,42 @@ body { font-family: 'JetBrainsMono', sans-serif; margin: 0; padding: 0; }
 }
 
 .navigation { 
-    /* position: sticky; */
-    display: flex;
-    align-items: center;
-    text-align: center;
-    background-color: #f1f1f1; 
-    box-shadow: 0 0px 20px rgba(0,0,0,0.2);
+    position: relative;
+    display: flex;  
+    justify-content: center;
+    background-color: #fff; 
+    /* box-shadow: 0 0px 20px rgba(0,0,0,0.2); */
+    padding: 10px;
     z-index: 101; 
 }
 
+.hline { 
+    width:100%; 
+    height:1.5px; 
+    background: #000;
+
+}
+
+.navigation #header {
+    position: absolute;
+    left: 20px; 
+    top: 5px;
+    bottom: 10px;
+    display: flex;
+    color: rgb(113, 102, 102);
+    align-items: center;
+}
+#header span{
+    margin-left: 10px;
+}   
 
 .navigation ul { 
     list-style-type: none; 
-    margin: 0; padding: 0; display:flex; width: 100%;
-    justify-content: center;
+    margin: 0; padding: 0; 
+    display:flex; 
     gap: 20px;
-
 }
-.navigation ul li { display: inline; }
+.navigation ul li { display: inline-block; }
 .navigation ul li a {
     position: relative;
     display: inline-block;
