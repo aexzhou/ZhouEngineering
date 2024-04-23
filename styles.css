@@ -14,7 +14,11 @@
 body { font-family: 'JetBrainsMono-Regular', sans-serif; margin: 0; padding: 0; }
 .footer { background-color: #ffffff; padding: 1px; text-align: center; transition: padding 0.3s ease-in-out; }
 /*top, left, right, bottom*/
-.main { padding: 20px 80px 80px 50px;}
+.main { 
+    padding: 20px 80px 80px 50px;
+    max-width: 1200px; /* Limits the width of the main content */
+    margin: 0 auto; /* Centers the main content horizontally */
+}
 
 
 .shrink {
@@ -23,17 +27,26 @@ body { font-family: 'JetBrainsMono-Regular', sans-serif; margin: 0; padding: 0; 
 }
 
 h2{
-    font-size: 30px;
+    font-size: 32px;
 }
 p{
-    font-size:20px;
+    font-size:18px;
+}
+
+.large-photo {
+    width: 400px;
+    height: auto;
 }
 
 .medium-photo {
-    width: 400px;
-    height: auto;
-
-}
+    width: 220px; 
+    margin: 5px;
+    height: auto; /* maintain aspect ratio */
+    border: 2px solid black; 
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    border-radius: 20px; 
+    max-width: 50%; 
+} 
 
 .navigation { 
     position: relative;
@@ -71,16 +84,33 @@ p{
 #home{
     scroll-margin-top: 150px;
 }
+
+#projects {
+    margin-top: 50px; /* headroom */
+}
 .row {
-    display: -webkit-flex;
     display: flex;
+    justify-content: space-between; /* keeps columns spaced out evenly */
+    align-items: center; /* center vertically*/
+    margin-top: 20px;
   }
 .column1 {
-    -webkit-flex: 1;
-    -ms-flex: 1;
-    flex: 1;
-    padding: 0px;
+    flex: 1 1 50%; /* lets column grow but links its size on 50% of the parent's width */
     
+}
+.column1:first-child {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* center text vertically */
+    text-align: left; 
+    padding-right: 20px; /* buffer from img */
+}
+.column1:nth-child(2) {
+    display: flex;
+    align-items: center; 
+    justify-content: space-around; /* spreads imgs out */
+    padding-left: 20px;  
+    flex-wrap: nowrap; 
 }
 
 .navigation ul { 
@@ -150,6 +180,24 @@ p{
     .navigation {
         display: none;
     }
+
+    .row {
+        flex-direction: column; 
+    }
+
+    .column1 {
+        justify-content: center;
+    }
+    .column1:nth-child(2) {
+        flex-direction: row; /* Ensures images are always in a row */
+    }
+
+    .medium-photo {
+        width: 40%; 
+        max-width: none;
+    }
+
+
 
 
     /* Hamburger menu */
