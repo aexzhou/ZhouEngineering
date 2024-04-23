@@ -1,0 +1,108 @@
+.project-main{
+    /* padding: 20px 80px 80px 140px; */
+    max-width: 1000px;
+    margin-left: 380px;
+    width: calc(100% - 300px);
+
+    padding: 20px;
+}
+
+
+.sidebar {
+    position: fixed; 
+    left: 0;
+    top: 80px;
+    width: 300px; 
+    height: 100vh; /* need full viewport height */
+    background-color: #f9f9f9; 
+    box-shadow: 2px 0 5px rgba(0,0,0,0.1); 
+    overflow-y: auto; /* enables scrolling within the sidebar */
+    overflow-x: hidden;
+    padding: 20px;
+    z-index: 99;
+}
+
+.directory-tree {
+    /*last is left*/
+    padding: 0px 0px 0px 2px;
+    margin: 0;
+}
+.directory-tree, .directory-tree ul {
+    list-style: none;        
+}
+
+.directory-tree li {
+    margin-top: 10px;
+    margin-left: 0px;
+}
+
+.directory-tree a {
+    display: block;
+    padding: 8px;
+    text-decoration: none;
+    color: black;
+    transition: background-color 0.2s;
+    border-radius: 10px;
+}
+
+.directory-tree a:hover {
+    background-color: #e0e0e0;
+    border-radius: 10px;
+}
+
+.folder-item{
+    margin-top: 10px;
+    padding-left: 22px;
+    position: relative; /* for positioning the pseudo elements */
+}
+.file-item {
+    margin-top: 10px;
+    left: -5px;
+    position: relative; 
+}
+
+.folder-item::before{
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 8px;
+    width: 20px; 
+    height: 20px; 
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+#folder-text{
+    font-family: "JetBrainsMono-Bold";
+}
+
+.folder-item::before {
+    background-image: url('../icons/folder-icon.svg'); /* Path to your folder icon */
+}
+
+.file-item::before{
+    content: '';
+    position: absolute;
+    left: -30px;
+    top: 50%; /* Centers the icon vertically */
+    transform: translateY(-50%);
+    width: 20px; /* Width of the icon */
+    height: 20px; /* Height of the icon */
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.file-item::before {
+    background-image: url('../icons/wrench1.svg'); /* Path to your file icon */
+}
+
+.directory-tree a {
+    display: block;
+    padding: 8px;
+    text-decoration: none;
+    color: black;
+    transition: background-color 0.3s;
+}
+
+.directory-tree a:hover {
+    background-color: #e0e0e0;
+}

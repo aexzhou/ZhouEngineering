@@ -19,7 +19,7 @@
     flex-direction: column;
     justify-content: center;
     text-align: left;
-    padding-right: 20px;
+    /* padding-right: 20px; */
 }
 .column1:nth-child(2) {
     display: flex;
