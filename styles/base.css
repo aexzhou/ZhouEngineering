@@ -1,0 +1,23 @@
+/* Base Styles */
+
+@font-face {
+    font-family: "JetBrainsMono-Regular";
+    src: url(../fonts/ttf/JetBrainsMono-Regular.ttf);
+}
+@font-face {
+    font-family: "JetBrainsMono-Medium";
+    src: url(../fonts/ttf/JetBrainsMono-Medium.ttf);
+}
+@font-face {
+    font-family: "JetBrainsMono-Bold";
+    src: url(../fonts/ttf/JetBrainsMono-Bold.ttf);
+}
+
+body { font-family: 'JetBrainsMono-Regular', sans-serif; margin: 0; padding: 0; }
+h2 { font-size: 32px; }
+p { font-size: 18px; }
+
+.chinese { font-family: 'Noto Sans SC', sans-serif; }
+.chinese1 { font-family: 'Zhi Mang Xing', cursive; }
+.chinese2 { font-family: 'Liu Jian Mao Cao', cursive; }
+.chinese3 { font-family: 'Ma Shan Zheng', cursive; }

@@ -1,0 +1,5 @@
+@keyframes txtflicker {
+    0%  { color: #CCC; } 
+    20% { color: #DDD; } 
+    100% { color: #999; }
+}

@@ -1,0 +1,83 @@
+.footer {
+    background-color: #ffffff;
+    padding: 1px;
+    text-align: center;
+    transition: padding 0.3s ease-in-out;
+}
+.navigation {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    padding: 10px;
+    z-index: 101;
+    transition: padding 0.3s ease-in-out;
+    width: 100%;
+    box-sizing: border-box;
+    border-bottom: 2px solid #000;
+}
+.navigation ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 20px;
+}
+.navigation li {
+    display: inline-block;
+    text-align: center;
+}
+.navigation ul li a {
+    position: relative;
+    display: block;
+    color: black;
+    padding: 16px 20px;
+    text-decoration: none;
+    transition: color 0.2s ease;
+    font-size: 16px;
+    transition: letter-spacing 0.1s ease-in-out;
+}
+.navigation ul li a::before, .navigation ul li a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: #999;
+    transform: scaleX(0);
+    transition: transform 0.2s ease;
+}
+.navigation ul li a::before { top: 0; }
+.navigation ul li a::after { bottom: 0; }
+.navigation ul li a:hover {
+    animation: txtflicker 0.3s forwards;
+}
+.navigation ul li a:hover::before, .navigation ul li a:hover::after {
+    transform: scaleX(1);
+}
+
+/* NAME */
+#name {
+    /* transition: font-size 0.1s ease; */
+    position: absolute;
+    left: 20px; 
+    top: 5px;
+    bottom: 10px;
+    display: flex;
+    color: rgb(0, 0, 0);
+    align-items: center;
+    font-size: 30px;
+}
+#name span{
+    margin-left: 10px;
+}   
+#about{
+    scroll-margin-top: 160px;
+}
+#home{
+    scroll-margin-top: 150px;
+}
+#projects {
+    margin-top: 50px; /* headroom */
+}

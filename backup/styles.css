@@ -1,14 +1,14 @@
 @font-face {
     font-family: "JetBrainsMono-Regular";
-    src: url(./fonts/ttf/JetBrainsMono-Regular.ttf);
+    src: url(../fonts/ttf/JetBrainsMono-Regular.ttf);
 }
 @font-face {
     font-family: "JetBrainsMono-Medium";
-    src: url(./fonts/ttf/JetBrainsMono-Medium.ttf);
+    src: url(../fonts/ttf/JetBrainsMono-Medium.ttf);
 }
 @font-face {
     font-family: "JetBrainsMono-Bold";
-    src: url(./fonts/ttf/JetBrainsMono-Bold.ttf);
+    src: url(../fonts/ttf/JetBrainsMono-Bold.ttf);
 }
 
 body { font-family: 'JetBrainsMono-Regular', sans-serif; margin: 0; padding: 0; }
