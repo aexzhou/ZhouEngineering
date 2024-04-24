@@ -92,12 +92,12 @@ function toggleMenu() {
     menuIcon.classList.toggle('menu-toggled');
 }
 
-document.querySelectorAll('.directory-tree a').forEach(link => {
-    link.addEventListener('click', function(e) {
-        const nextUl = this.nextElementSibling;
-        if (nextUl && nextUl.tagName === 'UL') {
-            e.preventDefault(); // prevent default anchor behavior
-            nextUl.style.display = nextUl.style.display === 'none' ? 'block' : 'none'; // toggle display
-        }
-    });
-});
+// document.querySelectorAll('.directory-tree a').forEach(link => {
+//     link.addEventListener('click', function(e) {
+//         const nextUl = this.nextElementSibling;
+//         if (nextUl && nextUl.tagName === 'UL') {
+//             e.preventDefault(); // prevent default anchor behavior
+//             nextUl.style.display = nextUl.style.display === 'none' ? 'block' : 'none'; // toggle display
+//         }
+//     });
+// });

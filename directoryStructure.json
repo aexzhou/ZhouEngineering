@@ -1,0 +1,41 @@
+[
+    {
+        "name": "Project Course: ELEC 291",
+        "type": "folder",
+        "children": [
+            {
+                "name": "Project 1: Reflow Oven Controller",
+                "type": "file",
+                "path": "projects/ELEC-291/reflow-oven-controller.md"
+            },
+            {
+                "name": "Project 2: Remote Control Metal Detector Robot",
+                "type": "file",
+                "path": "projects/ELEC-291/metal-detector-robot.md"
+            }
+        ]
+    },
+    {
+        "name": "FPGA - Verilog Templates",
+        "type": "folder",
+        "children": [
+            {
+                "name": "1",
+                "type": "file",
+                "path": "projects/verilog-template1.md"
+            },
+            {
+                "name": "2",
+                "type": "file",
+                "path": "projects/verilog-template2.md"
+            }
+        ]
+    }
+
+
+
+
+
+
+
+]
