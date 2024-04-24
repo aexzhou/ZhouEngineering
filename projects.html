@@ -17,6 +17,10 @@
     <link href="styles/utilities.css" rel="stylesheet">
     <link href="styles/animations.css" rel="stylesheet">
 
+    <!-- syntax highlighting -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.0/styles/github-dark.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.0/highlight.min.js"></script>
+
 </head>
 <body>
 
@@ -31,7 +35,11 @@
     </ul>
 </div>
 
-<div class="sidebar" id="directory-tree"></div>
+<div class="sidebar"> 
+    <h2 onclick="goToPage('projects.html')">PROJECT DIRECTORY</h2>
+    <div id="directory-tree"></div>
+
+</div>
 
 <div class="content-navigation"></div>
 
@@ -67,15 +75,52 @@
 }
 
 #markdown-content pre {
-    background-color: #FFF;
+    position: relative;
+    background-color: #282c34;
+    color: #eee;
     padding: 15px;
+    font-family: 'JetBrainsMono-Regular';
     overflow-x: auto;
+    border-color:  transparent;
+    border-radius: 10px;
+    font-size: 16px;
+    margin-top: 20px;
+}
+
+.code-lang-indicator {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: #000000;
+    color: #fff;
+    padding: 2px 8px;
+    font-size: 0.75em;
+    border-bottom-left-radius: 4px; 
 }
 
 #markdown-content img {
+    display: block;
     max-width: 100%;
     height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    border: 2px solid #000;
+    border-radius: 20px;
 }
+
+#markdown-content iframe{
+    display: block;
+    margin: auto;
+}
+
+.sidebar h2{
+    font-size: 26px;
+    color: #fff;
+    padding: 10px;
+    background-color: #5b5b5b;
+    text-align: center;
+    border-radius: 10px;
+} 
 </style>
 
 <!-- MARKDOWN & JSON PARSING JAVASCRIPT -->
@@ -95,12 +140,50 @@
             .then(data => {
                 const treeHtml = createTree(data);
                 document.getElementById('directory-tree').innerHTML = treeHtml;
+
+                const params = new URLSearchParams(window.location.search);
+                const projectID = params.get('projectID');
+                if (projectID){
+                    const markdownFile = findMarkdownFile(data, projectID);
+                    if (markdownFile) {
+                        loadMarkdown(markdownFile);
+                    }else{
+                        console.log("Markdown file not found for ID:", projectID);
+                        loadDefaultMarkdown();
+                    }
+                }else{
+                    loadDefaultMarkdown();
+                }
             })
             .catch(error => console.error('Failed to load directory structure:', error));
-        
-        loadMarkdown('project-home.md'); // Default md
     });
-    
+
+    function loadDefaultMarkdown() {
+        loadMarkdown('project-home.md'); // Default md
+    }
+
+    function findMarkdownFile(data, id) {
+        // does recursive search thru data tree
+        for (const item of data) {
+            if (item.type === "folder" && item.children) {
+                const result = findMarkdownFile(item.children, id);
+                if (result) return result;
+            } else if (item.type === "file" && item.id === id) {
+                return item.path;  
+            }
+        }
+        return null;  
+    }
+
+    function loadMarkdown(path) {
+        fetch(path)
+            .then(response => response.text())
+            .then(text => {
+                document.getElementById('markdown-content').innerHTML = marked(text);
+            })
+            .catch(err => console.error('Error loading the markdown file:', err));
+    }
+
     function renderMarkdown(template) {
         console.log(template.content.textContent);
         const renderedHtml = marked(template.content.textContent);
@@ -154,9 +237,28 @@
             .then(response => response.text())
             .then(text => {
                 document.getElementById('markdown-content').innerHTML = marked(text);
+                addLanguageIndicators();
                 generateContentNavigation();
             })
             .catch(err => console.error('Error loading the markdown file:', err));
+    }
+
+    function addLanguageIndicators() {
+        document.querySelectorAll('pre code').forEach((block) => {
+            const langName = block.classList[0]; // 'language-xyz' format, typically used by highlight.js
+            if (langName) {
+                const formattedLangName = formatLanguageName(langName);
+                const label = document.createElement('div');
+                label.className = 'code-lang-indicator';
+                label.textContent = formattedLangName;
+                block.parentNode.insertBefore(label, block);
+                // console.log("Adding label for:", formattedLangName);
+            }
+        });
+    }
+
+    function formatLanguageName(langName) {
+        return langName.replace('language-', '').toUpperCase(); // Adjust formatting as needed
     }
 
     function generateContentNavigation() {
@@ -213,6 +315,6 @@
 
 </script>
 
-<script src="../script.js"></script>
+<script src="script.js"></script>
 </body>
 </html>

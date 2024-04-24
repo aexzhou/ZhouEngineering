@@ -114,7 +114,8 @@
 }
 
 .project-box {
-    flex: 0 0 auto; /* makes box not move */
+    position: relative;
+    flex: 0 0 auto; 
     width: 300px; 
     height: 300px;
     text-align: center;
@@ -122,16 +123,38 @@
     box-shadow: 0 2px 5px rgba(0,0,0,0.2);
     border-radius: 5px;
     overflow: hidden;
+    transition: all 0.2s ease-in-out;
+    
 }
 
 .project-box img {
     width: 100%;
     height: auto;
     display: block;
+    
 }
 
 .project-box span {
-    display: block;
-    padding: 10px;
-    background-color: #f9f9f9;
+    position: absolute; /* Position the background text */
+    left: 0 ;
+    bottom: 0; /* At the bottom. Use top:0 to append it to the top */
+    background: #fff; /* Fallback color */
+    background: rgba(240, 240, 240, 0.9); /* Black background with 0.5 opacity */
+    color: #000;
+    width: 100%; /* Full width */
+    padding-bottom: 10px;
+    padding-top: 10px;
+    text-align: center;
+    font-family: 'JetBrainsMono-Bold',sans-serif;
+    font-size: 20px;
+    transition: all 0.2s ease-in-out;
+}
+.project-box:hover span{
+    padding-bottom: 14px;
+    padding-top: 12px;
+    background: rgb(255, 255, 255);
+}
+.project-box:hover{
+    transform: scale(1.01);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }

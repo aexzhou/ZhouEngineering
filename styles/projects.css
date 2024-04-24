@@ -15,7 +15,8 @@
     width: 18%; 
     max-width: 300px;
     height: 100vh; /* need full viewport height */
-    background-color: #d6d6d6; 
+    /* background-color: #e4e4e4;  */
+    background-color: #f0f0f0; 
     box-shadow: 2px 0 5px rgba(0,0,0,0.1); 
     overflow-y: auto; /* enables scrolling within the sidebar */
     overflow-x: hidden;
@@ -23,6 +24,7 @@
     z-index: 102;
     border-right: 2px solid #000;
 }
+
 .sidebar::-webkit-scrollbar{width: 12px;}
 .sidebar::-webkit-scrollbar-thumb{
     background: #DDD;
@@ -164,8 +166,8 @@
     position: fixed;
     right: 0;
     top: 0;
-    width: 12%;
-    max-width: 200px;
+    width: 18%; 
+    max-width: 300px;
     height: 100vh;
     overflow-y: auto;
     background-color: #f8f8f8;
@@ -177,11 +179,19 @@
     padding-top: 80px;
 }
 
-pre {
+.content-navigation a{
+    display: block;
+    padding: 4px;
+    font-size: 16px;
+    /* text-decoration: none; */
+    color: black;
+}
+
+/* pre {
     background-color: #eee;
     border: 1px solid #ccc;
     padding: 10px;
     overflow-x: auto;
-}
+} */
 
 

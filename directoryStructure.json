@@ -5,11 +5,13 @@
         "children": [
             {
                 "name": "Project 1: Reflow Oven Controller",
+                "id": "elec291p1",
                 "type": "file",
                 "path": "projects/ELEC-291/reflow-oven-controller.md"
             },
             {
                 "name": "Project 2: Remote Control Metal Detector Robot",
+                "id": "elec291p2",
                 "type": "file",
                 "path": "projects/ELEC-291/metal-detector-robot.md"
             }
@@ -21,11 +23,13 @@
         "children": [
             {
                 "name": "1",
+                "id": "001",
                 "type": "file",
                 "path": "projects/verilog-template1.md"
             },
             {
                 "name": "2",
+                "id": "002",
                 "type": "file",
                 "path": "projects/verilog-template2.md"
             }

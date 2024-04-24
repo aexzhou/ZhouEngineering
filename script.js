@@ -101,3 +101,15 @@ function toggleMenu() {
 //         }
 //     });
 // });
+
+function scrollToTop() {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+}
+
+function goToPage(url) {
+    window.location.href = url;
+}
+
