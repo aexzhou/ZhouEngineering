@@ -40,11 +40,18 @@ add a, R2
 mov R3, R2 LSL #2
 ```
 
+## fghdsjkfhijkdhfjk
+
+```c
+int var = 20;
+```
+
+
 ## THE MAKING OF THIS SITE
 Coming soon, this page will be full of links that guides you through the project categories more efficiently.Coming soon, this page will be full of links that guides you through the project categories more efficiently.Coming soon, this page will be full of links that guides you through the project categories more efficiently.Coming soon, this page will be full of links that guides you through the project categories more efficiently.
 
 ## IMAGE TEST
-![imagetest1](/images/coming-soon.jpg)
+![imagetest1](/images/patagonia.jpg)
 
 ## YOUTUBE VIDEO TEST
 <iframe width="640" height="420"

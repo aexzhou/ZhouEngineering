@@ -149,7 +149,7 @@
                         loadMarkdown(markdownFile);
                     }else{
                         console.log("Markdown file not found for ID:", projectID);
-                        loadDefaultMarkdown();
+                        loadMarkdown('utilities/page-not-found.md');
                     }
                 }else{
                     loadDefaultMarkdown();
@@ -163,7 +163,7 @@
     }
 
     function findMarkdownFile(data, id) {
-        // does recursive search thru data tree
+        // Does recursive search thru data tree
         for (const item of data) {
             if (item.type === "folder" && item.children) {
                 const result = findMarkdownFile(item.children, id);
@@ -172,16 +172,8 @@
                 return item.path;  
             }
         }
-        return null;  
-    }
 
-    function loadMarkdown(path) {
-        fetch(path)
-            .then(response => response.text())
-            .then(text => {
-                document.getElementById('markdown-content').innerHTML = marked(text);
-            })
-            .catch(err => console.error('Error loading the markdown file:', err));
+        return null;  
     }
 
     function renderMarkdown(template) {
